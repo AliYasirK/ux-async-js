@@ -4,9 +4,15 @@ window.onload = function () { // Run this once the page has loaded.
     function searchGithub() {
         const searchUserText = document.querySelector("#searchUser").value;
 
+        
         // Obtain a list of users from the Github API that match searchUserText
         //  The final result will contain an array under the key 'items'
         // Pass this array to `renderUserList`
+
+        fetch("https://developer.github.com/v3/search/#search-users.") 
+        .then(renderUserList())
+        .catch(renderUserList() 
+        );
     }
 
     function renderUserList(githubUsers) {
